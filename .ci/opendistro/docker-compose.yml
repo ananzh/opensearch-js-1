@@ -7,9 +7,9 @@ services:
       context: .
       dockerfile: Dockerfile.opendistro
       args:
-        - SECURE_INTEGRATION=${SECURE_INTEGRATION:-false}
         - OPENDISTRO_VERSION=${OPENDISTRO_VERSION:-latest}
     environment:
+      - SECURE_INTEGRATION=${SECURE_INTEGRATION:-false}
       - discovery.type=single-node
       - bootstrap.memory_lock=true
     ports:
