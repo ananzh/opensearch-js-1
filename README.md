@@ -1,4 +1,7 @@
 [![Nodejs](https://github.com/opensearch-project/opensearch-js/actions/workflows/nodejs.yml/badge.svg)](https://github.com/opensearch-project/opensearch-js/actions/workflows/nodejs.yml)
+[![Integration](https://github.com/opensearch-project/opensearch-js/actions/workflows/integration.yml/badge.svg)](https://github.com/opensearch-project/opensearch-js/actions/workflows/integration.yml)
+[![Bundler](https://github.com/opensearch-project/opensearch-js/actions/workflows/bundler.yml/badge.svg)](https://github.com/opensearch-project/opensearch-js/actions/workflows/bundler.yml)
+[![Coverage](https://github.com/opensearch-project/opensearch-js/actions/workflows/coverage.yml/badge.svg)](https://github.com/opensearch-project/opensearch-js/actions/workflows/coverage.yml)
 [![Chat](https://img.shields.io/badge/chat-on%20forums-blue)](https://discuss.opendistrocommunity.dev/c/clients/)
 ![PRs welcome!](https://img.shields.io/badge/PRs-welcome!-success)
 
