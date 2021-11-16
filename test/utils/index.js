@@ -38,7 +38,7 @@ const buildProxy = require('./buildProxy')
 const connection = require('./MockConnection')
 const { Client } = require('../../')
 
-async function waitCluster (client, waitForStatus = 'green', timeout = '50s', times = 0) {
+async function waitCluster (client, waitForStatus = 'yellow', timeout = '50s', times = 0) {
   if (!client) {
     throw new Error('waitCluster helper: missing client instance')
   }

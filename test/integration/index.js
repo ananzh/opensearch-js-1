@@ -85,7 +85,7 @@ function runner (opts = {}) {
 
 async function waitCluster (client, times = 0) {
   try {
-    await client.cluster.health({ waitForStatus: 'green', timeout: '50s' })
+    await client.cluster.health({ waitForStatus: 'yellow', timeout: '50s' })
   } catch (err) {
     if (++times < 10) {
       await sleep(5000)
