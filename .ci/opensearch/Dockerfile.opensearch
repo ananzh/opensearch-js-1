@@ -5,11 +5,6 @@ ARG opensearch_path=/usr/share/opensearch
 ARG opensearch_yml=$opensearch_path/config/opensearch.yml
 
 ARG SECURE_INTEGRATION
-RUN if [ "$SECURE_INTEGRATION" != "true" ] ; then echo "plugins.security.disabled: true" >> $opensearch_yml; fi
+#RUN if [ "$SECURE_INTEGRATION" != "true" ] ; then echo "plugins.security.disabled: true" >> $opensearch_yml; fi
+RUN if [ "$SECURE_INTEGRATION" != "true" ] ; then $opensearch_path/bin/opensearch-plugin remove opensearch-security; fi
 
-COPY --chown=opensearch:opensearch opensearch-run.sh $opensearch_path/
-RUN if [ "$SECURE_INTEGRATION" != "true" ] ; then docker exec opensearch rm /usr/share/opensearch/config/opensearch.yml; fi
-RUN if [ "$SECURE_INTEGRATION" != "true" ] ; then docker cp opensearch.yml /usr/share/opensearch/config/; fi
-RUN if [ "$SECURE_INTEGRATION" != "true" ] ; then docker exec opensearch cat /usr/share/opensearch/config/opensearch.yml; fi
-
-CMD /usr/share/opensearch/opensearch-run.sh
