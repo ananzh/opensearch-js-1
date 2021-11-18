@@ -43,9 +43,7 @@ jobs:
       run: |
         npm run test:integration:helpers
 
-
   helpers-secure-integration-test: 
-    needs: [ helpers-integration-test ] 
     name: Helpers integration test with secure cluster
     runs-on: ubuntu-latest
 

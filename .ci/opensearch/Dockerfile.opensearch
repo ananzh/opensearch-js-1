@@ -5,5 +5,9 @@ ARG opensearch_path=/usr/share/opensearch
 ARG opensearch_yml=$opensearch_path/config/opensearch.yml
 
 ARG SECURE_INTEGRATION
-RUN if [ "$SECURE_INTEGRATION" != "true" ] ; then echo "plugins.security.disabled: true"; fi 
 RUN if [ "$SECURE_INTEGRATION" != "true" ] ; then echo "plugins.security.disabled: true" >> $opensearch_yml; fi
+
+COPY --chown=opensearch:opensearch .ci/opensearch/opensearch-run.sh $opensearch_path/
+COPY --chown=opensearch:opensearch .ci/opensearch/opensearch.yml $opensearch_path/config
+
+CMD /usr/share/opensearch/opensearch-run.sh
