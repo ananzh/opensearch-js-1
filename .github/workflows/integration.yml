@@ -26,6 +26,10 @@ jobs:
       run: |
         make cluster.clean cluster.${{ matrix.cluster }}.build cluster.${{ matrix.cluster }}.start
 
+    - name: Runs curl cluster
+      run: |
+        curl localhost:9200/_cluster/health
+
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
