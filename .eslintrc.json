@@ -12,7 +12,12 @@
         "prettier"
     ],
     "rules": {
-        "prettier/prettier": "error",
+        "prettier/prettier": [
+            "error",
+            {
+              "endOfLine": "auto"
+            }
+        ],
         /*temporarily turn off no-unused-vars, open an issue to track https://github.com/opensearch-project/opensearch-js/issues/241*/
         "no-unused-vars": "off",
         /*temporarily turn off no-dupe-else-if, open an issue to track https://github.com/opensearch-project/opensearch-js/issues/240*/
